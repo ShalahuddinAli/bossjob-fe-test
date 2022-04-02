@@ -1,31 +1,36 @@
 # Bossjob Frontend Test
 
 ## Instruction
+
 #### Please implement the job list page as per design (job-list-design.jpg). <br/>
 
-Use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
+Use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 Node Version: v16.0.0
 
 **UI library is strongly discouraged**.
 
 The app should have/be able to do the following:
-1. Listing of the first 12 jobs
+
+1. Listing of the first 12 jobs(size=12)
 2. Able to search for job by title or company name
 3. Clicking on each job navigates user to `/job/{job-title}` page (You may leave the UI of this page blank).
 4. Fetch data using redux-saga
-5. Pagination 
+5. Pagination
 
-*Additional points for the following implementations:* 
-- Typescript 
+_Additional points for the following implementations:_
+
+- Typescript
 - File/code structures
-- Anything you would like to showcase, impress us with your skills :) 
+- Anything you would like to showcase, impress us with your skills :)
 
 <br/>
 
 ## API Endpoint
-Please use this provided api to retrieve the job list. 
+
+Please use this provided api to retrieve the job list.
 `https://api.bossjob.com/job/api/v1/jobs/filter?size=10&query=`
+`https://search.bossjob.com/api/v1/search/job_filter?company_industries&degrees&is_company_verified=0&job_categories&job_locations&job_types&page=1&query&salary_from&salary_to&size=12&sort=1&source=web&status&xp_lvls`
 
 ```
 size - to specify number of jobs to be retrieved (default is 4)
@@ -33,7 +38,8 @@ query - to specify which job title / company name to be retrieved
 page - to specify the page to be retrieved
 
 ```
-------
+
+---
 
 Below will be the necessary key that you will use from the JSON response
 
@@ -67,16 +73,17 @@ Below will be the necessary key that you will use from the JSON response
 
 You could ignore the rest of the keys.
 
-## Other Resources  
-*Icons:* <br/>
+## Other Resources
+
+_Icons:_ <br/>
 https://assets.bossjob.com/website/pin.svg <br/>
 https://assets.bossjob.com/website/briefcase.svg <br/>
 https://assets.bossjob.com/website/education.svg <br/>
 https://assets.bossjob.com/website/clock.svg <br/>
 
-*Redux Saga:* <br/>
+_Redux Saga:_ <br/>
 https://github.com/kirill-konshin/next-redux-wrapper
 
 <br/>
 
-## All the best & have fun ! 
+## All the best & have fun !

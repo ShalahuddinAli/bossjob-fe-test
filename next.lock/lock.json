@@ -1,4 +1,8 @@
 {
   "https://assets.bossjob.com/website/Search.svg": { "integrity": "sha512-h+0iKzxAq1wbXTwox7ZcI+fW+TTOMowmRUue0IENQGlnOWhvISO9KmMj4c8kG8e83WRGNXlF7maVckoApHzqiQ==", "contentType": "image/svg+xml" },
+  "https://assets.bossjob.com/website/briefcase.svg": { "integrity": "sha512-Xm3Ysd8O6ln7DEM81jPucV4tZXfcAdiWN20P0dr8lgYLZF7qbxFHcKloODkaITNGDuzW1SAM8rT6KO1ztYuZjA==", "contentType": "image/svg+xml" },
+  "https://assets.bossjob.com/website/clock.svg": { "integrity": "sha512-fnih4QSi6Lg324jyEEyG9TvaOcHjLId9Gqeap+e8RhnhuooDMrZMmgk2e5ne11HCl15Yg7nkUwOsIvhjJ26gIA==", "contentType": "image/svg+xml" },
+  "https://assets.bossjob.com/website/education.svg": { "integrity": "sha512-HzRRIJS/bn5UJaizfvFzakRVW7jy+xp4JHOsp8IHHigYa3QZ8/rXg6DovJ/5b7CI+mXntV+y3fVlByMbjj70nA==", "contentType": "image/svg+xml" },
+  "https://assets.bossjob.com/website/pin.svg": { "integrity": "sha512-mxxX7ogMttKqCqqDR6Shun77dPfdCXZuLY0nokzWl6H+GwQjbB1vCPObGDbat4NghzoUq/kRN+meYqwXsi+wOg==", "contentType": "image/svg+xml" },
   "version": 1
 }

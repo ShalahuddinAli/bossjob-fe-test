@@ -4,9 +4,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
-module.exports = {
-	experimental: {
-		urlImports: ['https://assets.bossjob.com/website/'],
-	},
-};

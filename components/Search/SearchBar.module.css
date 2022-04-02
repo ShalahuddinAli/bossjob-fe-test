@@ -11,12 +11,6 @@
 	display: flex;
 }
 
-.wrapper Image {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
-
 .wrapper input {
 	border: none;
 	width: 80%;

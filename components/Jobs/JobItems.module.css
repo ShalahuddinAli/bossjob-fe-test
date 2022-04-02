@@ -1,0 +1,59 @@
+.container {
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding-bottom: 0.7em;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.roleContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.roleContainer p {
+	font-size: 15px;
+}
+
+.roleInfos {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.infoWrapper {
+	flex: 50%;
+	position: relative;
+	display: flex;
+	margin-top: -15px;
+}
+
+.infoWrapper img {
+	position: absolute;
+	top: 35%;
+	left: 0px;
+}
+
+.infoWrapper p {
+	border: none;
+	margin-left: 2em;
+	width: 80%;
+	font-size: 0.9em;
+}
+
+.company {
+	position: relative;
+	display: flex;
+}
+
+.company img {
+	position: absolute;
+	top: 25%;
+}
+
+.company p {
+	border: none;
+	margin-left: 3em;
+	width: 80%;
+	font-size: 0.9em;
+}
