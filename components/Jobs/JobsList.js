@@ -1,6 +1,7 @@
 import React from 'react';
 import JobDetails from './JobDetails';
 import PageDirectory from './PageDirectory';
+import classes from './JobsList.module.css';
 
 const jobs = {
 	message: 'OK',
@@ -29,8 +30,10 @@ const jobs = {
 
 const JobsList = () => {
 	return (
-		<div>
-			<h1>{jobs.data.size} jobs found</h1>
+		<div className={classes.container}>
+			<div className={classes.jobsFoundWrapper}>
+				<p>{jobs.data.size} jobs found</p>
+			</div>
 			<JobDetails />
 			<PageDirectory />
 		</div>

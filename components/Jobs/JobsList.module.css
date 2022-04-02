@@ -1,0 +1,10 @@
+.container {
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.jobsFoundWrapper {
+	border-bottom: 1px solid #d8d8d8;
+	font-size: 0.8em;
+}
