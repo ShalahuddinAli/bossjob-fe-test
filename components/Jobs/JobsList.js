@@ -1,9 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import JobItems from './JobItems';
-import PageDirectory from './PageDirectory';
+import Pagination from '../Pagination/Pagination';
 import classes from './JobsList.module.css';
 
 const JobsList = ({ data }) => {
+	const [currentPage, setCurrentPage] = useState(1);
 	return (
 		<div className={classes.container}>
 			<div className={classes.jobsFoundWrapper}>
@@ -12,7 +13,12 @@ const JobsList = ({ data }) => {
 			{data.jobs.map((job) => (
 				<JobItems key={job.id} />
 			))}
-			<PageDirectory />
+			<Pagination
+				currentPage={2}
+				totalCount={42}
+				pageSize={6}
+				onPageChange={(page) => setCurrentPage(page)}
+			/>
 		</div>
 	);
 };
