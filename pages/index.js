@@ -86,7 +86,7 @@ const jobs = {
 	},
 };
 
-export default function Home(props) {
+export default function Home() {
 	const { data } = jobs;
 
 	const dispatch = useDispatch();

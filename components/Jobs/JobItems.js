@@ -1,12 +1,15 @@
 import React from 'react';
 import classes from './JobItems.module.css';
 
-const JobItems = (props) => {
+const JobItems = ({ job }) => {
 	return (
 		<div className={classes.container}>
 			<div className={classes.roleContainer}>
-				<h4>Front-end Developer</h4>
-				<p>$30k-$40k</p>
+				<h4>{job.job_title}</h4>
+				<p>
+					&#8369;{job.salary_range_from / 1000}k - &#8369;
+					{job.salary_range_to / 1000}k
+				</p>
 			</div>
 			<div className={classes.roleInfos}>
 				<div className={classes.infoWrapper}>
@@ -16,7 +19,7 @@ const JobItems = (props) => {
 						width={13}
 						height={13}
 					/>
-					<p>Cebu city</p>
+					<p>{job.job_location}</p>
 				</div>
 				<div className={classes.infoWrapper}>
 					<img
@@ -25,7 +28,7 @@ const JobItems = (props) => {
 						width={13}
 						height={13}
 					/>
-					<p>1-3 years</p>
+					<p>{job.xp_lvl}</p>
 				</div>
 				<div className={classes.infoWrapper}>
 					<img
@@ -34,7 +37,7 @@ const JobItems = (props) => {
 						width={13}
 						height={13}
 					/>
-					<p>Diploma</p>
+					<p>{job.degree}</p>
 				</div>
 				<div className={classes.infoWrapper}>
 					<img
@@ -43,17 +46,12 @@ const JobItems = (props) => {
 						width={13}
 						height={13}
 					/>
-					<p>Full time</p>
+					<p>{job.job_type}</p>
 				</div>
 			</div>
 			<div className={classes.company}>
-				<img
-					src="https://assets.bossjob.com/companies/15216/logo/7g5C0SNFrpzV3w92JAIbAKSLvmBnNAhSe5Y4bEzS.jpeg"
-					alt="search"
-					width={30}
-					height={30}
-				/>
-				<p>Full time</p>
+				<img src={job.company_logo} width={30} height={30} />
+				<p>{job.company_name}</p>
 			</div>
 		</div>
 	);

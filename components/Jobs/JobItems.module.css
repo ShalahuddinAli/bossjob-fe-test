@@ -12,6 +12,10 @@
 	align-items: center;
 }
 
+.roleContainer h4 {
+	width: 65%;
+}
+
 .roleContainer p {
 	font-size: 15px;
 }
@@ -54,6 +58,6 @@
 .company p {
 	border: none;
 	margin-left: 3em;
-	width: 80%;
+	width: 60%;
 	font-size: 0.9em;
 }
