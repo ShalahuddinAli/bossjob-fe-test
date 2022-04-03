@@ -1,9 +1,20 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+
 import classes from './JobItems.module.css';
+import { useRouter } from 'next/router';
 
 const JobItems = ({ job }) => {
+	const router = useRouter();
+
+	const handleViewJob = (title) => {
+		router.push('/job/' + title);
+	};
+
 	return (
-		<div className={classes.container}>
+		<div
+			className={classes.container}
+			onClick={(title) => handleViewJob(job.job_title)}>
 			<div className={classes.roleContainer}>
 				<h4>{job.job_title}</h4>
 				<p>

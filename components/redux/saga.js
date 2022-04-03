@@ -1,16 +1,16 @@
 import { all, call, delay, put, take, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
-import { getJobsSucceeded } from './actions';
+import { clearJobs, getJobsSucceeded } from './actions';
 import { GET_JOBS_REQUESTED } from './types';
+import { BOSSJOB_SEARCH } from '../../constant/ApiConstant';
 
-function* getJobs() {
+function* getJobs({ payload }) {
 	try {
 		const { data } = yield axios.request({
 			method: 'get',
-			url: 'https://search.bossjob.com/api/v1/search/job_filter?page=1&query&size=12',
+			url: BOSSJOB_SEARCH,
+			params: payload,
 		});
-
-		console.log(data, 'PASS saga.js');
 		yield put(getJobsSucceeded(data));
 	} catch (err) {
 		console.log('FAILED saga.js');

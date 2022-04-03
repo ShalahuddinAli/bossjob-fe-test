@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import JobItems from './JobItems';
 import Pagination from '../Pagination/Pagination';
 import classes from './JobsList.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-const JobsList = ({ data }) => {
-	const dispatch = useDispatch();
+const JobsList = () => {
 	const jobs = useSelector((state) => state.jobs.data);
-	console.log(jobs, 'jobslist');
-	const [currentPage, setCurrentPage] = useState(1);
+
 	return (
 		<div className={classes.container}>
 			<div className={classes.jobsFoundWrapper}>
@@ -18,10 +15,10 @@ const JobsList = ({ data }) => {
 				<JobItems key={job.id} job={job} />
 			))}
 			<Pagination
-				currentPage={2}
-				totalCount={42}
-				pageSize={6}
-				onPageChange={(page) => setCurrentPage(page)}
+				currentPage={jobs.page}
+				totalCount={jobs.total_num}
+				pageSize={jobs.size}
+				query={jobs.query}
 			/>
 		</div>
 	);

@@ -1,4 +1,4 @@
-import { GET_JOBS_REQUESTED, GET_JOBS_SUCCEEDED } from './types';
+import { CLEAR_JOBS, GET_JOBS_REQUESTED, GET_JOBS_SUCCEEDED } from './types';
 import { HYDRATE } from 'next-redux-wrapper';
 
 const initialState = {

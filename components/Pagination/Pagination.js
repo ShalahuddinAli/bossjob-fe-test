@@ -1,15 +1,14 @@
 import React from 'react';
 import { usePagination, DOTS } from './usePagination';
 import classes from './Pagination.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getJobsRequested } from '../redux/actions';
+
+import { BOSSJOB_PAGINATION_SIBLINGS as siblingCount } from '../../constant/ApiConstant';
 
 const Pagination = (props) => {
-	const {
-		onPageChange,
-		totalCount,
-		siblingCount = 1,
-		currentPage,
-		pageSize,
-	} = props;
+	const dispatch = useDispatch();
+	const { totalCount, currentPage, pageSize, query } = props;
 
 	const paginationRange = usePagination({
 		currentPage,
@@ -22,20 +21,29 @@ const Pagination = (props) => {
 		return null;
 	}
 
-	const onNext = () => {
-		onPageChange(currentPage + 1);
-	};
+	const onPageChange = (type) => {
+		let pageToChange;
 
-	const onPrevious = () => {
-		onPageChange(currentPage - 1);
+		if (typeof type === 'number') {
+			pageToChange = type;
+		} else if (type === 'next') {
+			pageToChange = currentPage + 1;
+		} else {
+			pageToChange = currentPage - 1;
+		}
+
+		dispatch(getJobsRequested({ page: pageToChange, query: query }));
 	};
 
 	let lastPage = paginationRange[paginationRange.length - 1];
 
 	return (
 		<ul className={classes.container}>
+			{/* previous arrow pagination */}
 			{currentPage !== 1 && (
-				<li className={classes.paginationItem} onClick={onPrevious}>
+				<li
+					className={classes.paginationItem}
+					onClick={() => onPageChange('prev')}>
 					<div className={classes.arrow}>&#60;</div>
 				</li>
 			)}
@@ -52,13 +60,17 @@ const Pagination = (props) => {
 								: classes.paginationItem
 						}
 						onClick={() => onPageChange(pageNumber)}
-						key={index}>
+						key={index}
+						id={pageNumber}>
 						{pageNumber}
 					</li>
 				);
 			})}
+			{/* next arrow pagination */}
 			{currentPage !== lastPage && (
-				<li className={classes.paginationItem} onClick={onNext}>
+				<li
+					className={classes.paginationItem}
+					onClick={() => onPageChange('next')}>
 					<div className={classes.arrow}>&#62;</div>
 				</li>
 			)}
