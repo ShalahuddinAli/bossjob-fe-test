@@ -42,7 +42,7 @@ export const usePagination = ({
 		if (!shouldShowLeftDots && shouldShowRightDots) {
 			let leftItemCount = 3 + 2 * siblingCount;
 			let leftRange = range(1, leftItemCount);
-			console.log(leftRange);
+
 			return [...leftRange, DOTS, totalPageCount];
 		}
 

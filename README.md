@@ -30,7 +30,8 @@ _Additional points for the following implementations:_
 
 Please use this provided api to retrieve the job list.
 `https://api.bossjob.com/job/api/v1/jobs/filter?size=10&query=`
-`https://search.bossjob.com/api/v1/search/job_filter?company_industries&degrees&is_company_verified=0&job_categories&job_locations&job_types&page=1&query&salary_from&salary_to&size=12&sort=1&source=web&status&xp_lvls`
+
+`https://search.bossjob.com/api/v1/search/job_filter?page=1&query&size=12`
 
 ```
 size - to specify number of jobs to be retrieved (default is 4)

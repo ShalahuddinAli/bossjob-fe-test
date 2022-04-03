@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
+import { END } from 'redux-saga';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Header from '/components/Header';
-import styles from '../styles/Home.module.css';
 import Search from '../components/Search/Search';
 import JobsList from '../components/Jobs/JobsList';
+import { wrapper } from '../components/redux/store';
+import { getJobsRequested } from '../components/redux/actions';
+import styles from '../styles/Home.module.css';
 
 const jobs = {
 	message: 'OK',
@@ -82,7 +88,16 @@ const jobs = {
 
 export default function Home(props) {
 	const { data } = jobs;
-	console.log(props);
+
+	const dispatch = useDispatch();
+	const jubs = useSelector((state) => state);
+
+	console.log(jubs, 'jubo');
+
+	// useEffect(() => {
+	// 	dispatch(getJobsRequested());
+	// }, [dispatch]);
+
 	return (
 		<div className={styles.app}>
 			<div className={styles.appWrapper}>
@@ -96,17 +111,25 @@ export default function Home(props) {
 	);
 }
 
-export const getStaticProps = async () => {
-	const response = await fetch(
-		'https://search.bossjob.com/api/v1/search/job_filter?company_industries&degrees&is_company_verified=0&job_categories&job_locations&job_types&page=1&query&salary_from&salary_to&size=12&sort=1&source=web&status&xp_lvls'
-	);
+// export const getStaticProps = async () => {
+// 	const response = await fetch(
+// 		'https://search.bossjob.com/api/v1/search/job_filter?page=1&query&size=12'
+// 	);
 
-	const jobs = await response.json();
+// 	const jobs = await response.json();
 
-	return {
-		props: {
-			jobs: jobs.data,
-		},
-		revalidate: 10,
-	};
-};
+// 	return {
+// 		props: {
+// 			jobs: jobs.data,
+// 		},
+// 		revalidate: 10,
+// 	};
+// };
+
+export const getStaticProps = wrapper.getStaticProps((store) => async ({}) => {
+	store.dispatch(getJobsRequested());
+
+	store.dispatch(END);
+
+	await store.sagaTask.toPromise();
+});
