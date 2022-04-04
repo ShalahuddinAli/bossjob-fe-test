@@ -13,3 +13,10 @@ export const getJobsSucceeded = (data) => {
 		payload: data,
 	};
 };
+
+export const redirect = (link) => {
+	return {
+		type: REDIRECT,
+		payload: link,
+	};
+};

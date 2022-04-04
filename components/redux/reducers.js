@@ -2,7 +2,7 @@ import { CLEAR_JOBS, GET_JOBS_REQUESTED, GET_JOBS_SUCCEEDED } from './types';
 import { HYDRATE } from 'next-redux-wrapper';
 
 const initialState = {
-	jobs: [],
+	data: {},
 	job: '',
 };
 
@@ -15,7 +15,10 @@ function reducer(state = initialState, action) {
 		}
 
 		case GET_JOBS_SUCCEEDED: {
-			return { ...state, jobs: payload };
+			return {
+				...state,
+				data: payload.data,
+			};
 		}
 
 		default:

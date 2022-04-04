@@ -4,21 +4,20 @@ import classes from './JobsList.module.css';
 import { useSelector } from 'react-redux';
 
 const JobsList = () => {
-	const jobs = useSelector((state) => state.jobs.data);
+	const data = useSelector((state) => state.data);
 
 	return (
 		<div className={classes.container}>
 			<div className={classes.jobsFoundWrapper}>
-				<p>{jobs.total_num} jobs found</p>
+				<p>{data.total_num} jobs found</p>
 			</div>
-			{jobs.jobs.map((job) => (
+			{data.jobs.map((job) => (
 				<JobItems key={job.id} job={job} />
 			))}
 			<Pagination
-				currentPage={jobs.page}
-				totalCount={jobs.total_num}
-				pageSize={jobs.size}
-				query={jobs.query}
+				currentPage={data.page}
+				totalCount={data.total_pages}
+				query={data.query}
 			/>
 		</div>
 	);

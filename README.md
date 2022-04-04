@@ -29,7 +29,7 @@ _Additional points for the following implementations:_
 ## API Endpoint
 
 Please use this provided api to retrieve the job list.
-`https://api.bossjob.com/job/api/v1/jobs/filter?size=10&query=`
+`https://api.bossjob.com/jobs/filter?size=10&query=`
 
 `https://search.bossjob.com/api/v1/search/job_filter?page=1&query&size=12`
 

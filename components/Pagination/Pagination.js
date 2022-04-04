@@ -4,11 +4,13 @@ import classes from './Pagination.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getJobsRequested } from '../redux/actions';
 
-import { BOSSJOB_PAGINATION_SIBLINGS as siblingCount } from '../../constant/ApiConstant';
+import {
+	BOSSJOB_PAGINATION_SIBLINGS as siblingCount,
+	BOSSJOB_PAGE_SIZE as pageSize,
+} from '../../constant/ApiConstant';
 
-const Pagination = (props) => {
+const Pagination = ({ totalCount, currentPage, query }) => {
 	const dispatch = useDispatch();
-	const { totalCount, currentPage, pageSize, query } = props;
 
 	const paginationRange = usePagination({
 		currentPage,

@@ -11,6 +11,7 @@ function* getJobs({ payload }) {
 			url: BOSSJOB_SEARCH,
 			params: payload,
 		});
+		console.log(data.data, 'saga');
 		yield put(getJobsSucceeded(data));
 	} catch (err) {
 		console.log('FAILED saga.js');
