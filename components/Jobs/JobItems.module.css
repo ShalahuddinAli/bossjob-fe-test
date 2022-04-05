@@ -18,6 +18,7 @@
 
 .roleContainer p {
 	font-size: 15px;
+	text-align: end;
 }
 
 .roleInfos {
@@ -44,6 +45,10 @@
 	width: 80%;
 	font-size: 0.9em;
 }
+.companyAndDateWrapper {
+	display: flex;
+	justify-content: space-between;
+}
 
 .company {
 	position: relative;
@@ -60,4 +65,17 @@
 	margin-left: 3em;
 	width: 60%;
 	font-size: 0.9em;
+}
+
+.date {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.date p {
+	font-size: smaller;
+	white-space: nowrap;
+	text-align: center;
+	color: #11111187;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePagination, DOTS } from './usePagination';
-import classes from './Pagination.module.css';
+import styles from './Pagination.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getJobsRequested } from '../redux/actions';
 
@@ -34,19 +34,19 @@ const Pagination = ({ totalCount, currentPage, query }) => {
 			pageToChange = currentPage - 1;
 		}
 
-		dispatch(getJobsRequested({ page: pageToChange, query: query }));
+		dispatch(getJobsRequested(query, pageToChange));
 	};
 
 	let lastPage = paginationRange[paginationRange.length - 1];
 
 	return (
-		<ul className={classes.container}>
+		<ul className={styles.container}>
 			{/* previous arrow pagination */}
 			{currentPage !== 1 && (
 				<li
-					className={classes.paginationItem}
+					className={styles.paginationItem}
 					onClick={() => onPageChange('prev')}>
-					<div className={classes.arrow}>&#60;</div>
+					<div className={styles.arrow}>&#60;</div>
 				</li>
 			)}
 			{paginationRange.map((pageNumber, index) => {
@@ -58,8 +58,8 @@ const Pagination = ({ totalCount, currentPage, query }) => {
 					<li
 						className={
 							pageNumber === currentPage
-								? classes.currentPage
-								: classes.paginationItem
+								? styles.currentPage
+								: styles.paginationItem
 						}
 						onClick={() => onPageChange(pageNumber)}
 						key={index}
@@ -71,9 +71,9 @@ const Pagination = ({ totalCount, currentPage, query }) => {
 			{/* next arrow pagination */}
 			{currentPage !== lastPage && (
 				<li
-					className={classes.paginationItem}
+					className={styles.paginationItem}
 					onClick={() => onPageChange('next')}>
-					<div className={classes.arrow}>&#62;</div>
+					<div className={styles.arrow}>&#62;</div>
 				</li>
 			)}
 		</ul>

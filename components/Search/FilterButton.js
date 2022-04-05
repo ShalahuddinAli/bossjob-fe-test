@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './FilterButton.module.css';
+import styles from './FilterButton.module.css';
 
 const FilterButton = () => {
 	return (
-		<div className={classes.container}>
+		<div className={styles.container}>
 			<button>Filter results</button>
 		</div>
 	);

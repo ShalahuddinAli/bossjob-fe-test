@@ -4,6 +4,8 @@ import { HYDRATE } from 'next-redux-wrapper';
 const initialState = {
 	data: {},
 	job: '',
+	query: '',
+	page: null,
 };
 
 function reducer(state = initialState, action) {
@@ -18,6 +20,8 @@ function reducer(state = initialState, action) {
 			return {
 				...state,
 				data: payload.data,
+				query: payload.data.query,
+				page: payload.data.page,
 			};
 		}
 

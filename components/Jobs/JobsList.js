@@ -1,18 +1,18 @@
 import JobItems from './JobItems';
 import Pagination from '../Pagination/Pagination';
-import classes from './JobsList.module.css';
+import styles from './JobsList.module.css';
 import { useSelector } from 'react-redux';
 
 const JobsList = () => {
 	const data = useSelector((state) => state.data);
 
 	return (
-		<div className={classes.container}>
-			<div className={classes.jobsFoundWrapper}>
+		<div className={styles.container}>
+			<div className={styles.jobsFoundWrapper}>
 				<p>{data.total_num} jobs found</p>
 			</div>
 			{data.jobs.map((job) => (
-				<JobItems key={job.id} job={job} />
+				<JobItems job={job} key={job.id} />
 			))}
 			<Pagination
 				currentPage={data.page}
