@@ -3,8 +3,12 @@ import { useRouter } from 'next/router';
 
 const JobTitle = () => {
 	const router = useRouter();
-	console.log(router);
-	return <div>jobTitle</div>;
+
+	return (
+		<div style={{ position: 'absolute', top: '50%', left: '50%' }}>
+			{router.query.jid}
+		</div>
+	);
 };
 
 export default JobTitle;

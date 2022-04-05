@@ -3,7 +3,6 @@
 
 import styles from './JobItems.module.css';
 import { useRouter } from 'next/router';
-import moment from 'moment';
 
 const JobItems = ({ job }) => {
 	const router = useRouter();
@@ -49,7 +48,10 @@ const JobItems = ({ job }) => {
 	};
 
 	const handleViewJob = (title) => {
-		router.push({ pathname: '/job/[jid]', query: { jid: title } });
+		router.push({
+			pathname: '/job/[jid]',
+			query: { jid: title.replace(/\s+/g, '-') },
+		});
 	};
 
 	const salaryRange = (from, to) => {
